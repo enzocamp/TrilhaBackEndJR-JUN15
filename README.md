@@ -1,7 +1,42 @@
 ![Código Certo Coders](https://utfs.io/f/3b2340e8-5523-4aca-a549-0688fd07450e-j4edu.jfif)
 
 # 📚 Trilha Inicial BackEnd Jr
-Este projeto tem como objetivo desenvolver uma API RESTful para gerenciamento de tarefas, proporcionando funcionalidades de CRUD (Create, Read, Update, Delete) de tarefas, autenticação de usuários e armazenamento dos dados em um banco de dados.
+Este projeto tem como objetivo desenvolver uma API RESTful para gerenciamento de tarefas, proporcionando funcionalidades de CRUD (Create, Read, Update, Delete) de tarefas, autenticação de usuários e armazenamento dos dados em um banco de dados, utilizando o Frameworok .NET e ASP.NET Core juntamente com a linguagem C#, EntityFramework, SQLite para o banco de dados.
+
+## PRÉ REQUISITOS ##
+
+.NET SDK - Necessário fazer a instalação do .NET em seu S.O
+# utilizei e versão 8.0.304
+
+Para configurar e rodar esse projeto deve ser instalado o SQLite em seu S.O.
+# Versão que usei foi a 3.46.1
+
+## CONFIGURAÇÕES ##
+
+``Configurar o SQLite``
+
+1 - Faça o  donwload em: https://www.sqlite.org/ para sua versão de bits do S.O.
+
+2 - Instale em seus disco local C:
+
+3- Configure nas variáveis de ambiente, a variável PATH adicionando uma nova variável com o caminho do executável do sqlite que foi salvo no C:
+
+# String de conexão no appsettings.json
+
+"ConnectionStrings": {
+  "DefaultConnection": "Data Source=C:\\SQLite\\mydatabase.db"
+}
+
+# Criar as Migrations
+
+Como as migrations não estão incluídas no repositório, você precisará gerá-las manualmente. Execute o seguinte comando para criar a migration inicial:
+
+   bash: ``dotnet ef migrations add InitialCreate``
+
+Esse comando criará as migrations necessárias para gerar as tabelas no banco de dados SQLite.
+
+Após criar as migrations, aplique-as ao banco de dados para gerar as tabelas. Use o seguinte comando: ``dotnet ef database update``
+
 
 ## Objetivos:
 - Criar uma API que permita CRUD (Create, Read, Update, Delete) de tarefas.

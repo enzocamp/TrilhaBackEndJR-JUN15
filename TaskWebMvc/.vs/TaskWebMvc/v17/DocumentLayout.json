@@ -3,20 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\EnzoF\\OneDrive\\Documentos\\Documento-Pessoal\\C#\\Projetos\\TrilhaBackEndJR-JUN15\\TaskWebMvc\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7722FBE1-2041-492C-8AC9-247E533A4B99}|TaskWebMvc.csproj|c:\\users\\enzof\\onedrive\\documentos\\documento-pessoal\\c#\\projetos\\trilhabackendjr-jun15\\taskwebmvc\\models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7722FBE1-2041-492C-8AC9-247E533A4B99}|TaskWebMvc.csproj|solutionrelative:models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7722FBE1-2041-492C-8AC9-247E533A4B99}|TaskWebMvc.csproj|c:\\users\\enzof\\onedrive\\documentos\\documento-pessoal\\c#\\projetos\\trilhabackendjr-jun15\\taskwebmvc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7722FBE1-2041-492C-8AC9-247E533A4B99}|TaskWebMvc.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7722FBE1-2041-492C-8AC9-247E533A4B99}|TaskWebMvc.csproj|c:\\users\\enzof\\onedrive\\documentos\\documento-pessoal\\c#\\projetos\\trilhabackendjr-jun15\\taskwebmvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7722FBE1-2041-492C-8AC9-247E533A4B99}|TaskWebMvc.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\EnzoF\\OneDrive\\Documentos\\Documento-Pessoal\\C#\\Projetos\\TrilhaBackEndJR-JUN15\\TaskWebMvc\\Migrations\\20240905224903_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240905224903_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7722FBE1-2041-492C-8AC9-247E533A4B99}|TaskWebMvc.csproj|c:\\users\\enzof\\onedrive\\documentos\\documento-pessoal\\c#\\projetos\\trilhabackendjr-jun15\\taskwebmvc\\database\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7722FBE1-2041-492C-8AC9-247E533A4B99}|TaskWebMvc.csproj|solutionrelative:database\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7722FBE1-2041-492C-8AC9-247E533A4B99}|TaskWebMvc.csproj|c:\\users\\enzof\\onedrive\\documentos\\documento-pessoal\\c#\\projetos\\trilhabackendjr-jun15\\taskwebmvc\\models\\taskuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7722FBE1-2041-492C-8AC9-247E533A4B99}|TaskWebMvc.csproj|solutionrelative:models\\taskuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7722FBE1-2041-492C-8AC9-247E533A4B99}|TaskWebMvc.csproj|c:\\users\\enzof\\onedrive\\documentos\\documento-pessoal\\c#\\projetos\\trilhabackendjr-jun15\\taskwebmvc\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7722FBE1-2041-492C-8AC9-247E533A4B99}|TaskWebMvc.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7722FBE1-2041-492C-8AC9-247E533A4B99}|TaskWebMvc.csproj|c:\\users\\enzof\\onedrive\\documentos\\documento-pessoal\\c#\\projetos\\trilhabackendjr-jun15\\taskwebmvc\\models\\worktask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7722FBE1-2041-492C-8AC9-247E533A4B99}|TaskWebMvc.csproj|solutionrelative:models\\worktask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7722FBE1-2041-492C-8AC9-247E533A4B99}|TaskWebMvc.csproj|c:\\users\\enzof\\onedrive\\documentos\\documento-pessoal\\c#\\projetos\\trilhabackendjr-jun15\\taskwebmvc\\taskwebmvc.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{7722FBE1-2041-492C-8AC9-247E533A4B99}|TaskWebMvc.csproj|solutionrelative:taskwebmvc.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7722FBE1-2041-492C-8AC9-247E533A4B99}|TaskWebMvc.csproj|c:\\users\\enzof\\onedrive\\documentos\\documento-pessoal\\c#\\projetos\\trilhabackendjr-jun15\\taskwebmvc\\models\\enums\\taskstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7722FBE1-2041-492C-8AC9-247E533A4B99}|TaskWebMvc.csproj|solutionrelative:models\\enums\\taskstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7722FBE1-2041-492C-8AC9-247E533A4B99}|TaskWebMvc.csproj|c:\\users\\enzof\\onedrive\\documentos\\documento-pessoal\\c#\\projetos\\trilhabackendjr-jun15\\taskwebmvc\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7722FBE1-2041-492C-8AC9-247E533A4B99}|TaskWebMvc.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7722FBE1-2041-492C-8AC9-247E533A4B99}|TaskWebMvc.csproj|c:\\users\\enzof\\onedrive\\documentos\\documento-pessoal\\c#\\projetos\\trilhabackendjr-jun15\\taskwebmvc\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,37 +50,102 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "20240905224903_Initial.cs",
+              "DocumentMoniker": "C:\\Users\\EnzoF\\OneDrive\\Documentos\\Documento-Pessoal\\C#\\Projetos\\TrilhaBackEndJR-JUN15\\TaskWebMvc\\Migrations\\20240905224903_Initial.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240905224903_Initial.cs",
+              "ToolTip": "C:\\Users\\EnzoF\\OneDrive\\Documentos\\Documento-Pessoal\\C#\\Projetos\\TrilhaBackEndJR-JUN15\\TaskWebMvc\\Migrations\\20240905224903_Initial.cs",
+              "RelativeToolTip": "Migrations\\20240905224903_Initial.cs",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAgwA4AAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T22:49:03.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\EnzoF\\OneDrive\\Documentos\\Documento-Pessoal\\C#\\Projetos\\TrilhaBackEndJR-JUN15\\TaskWebMvc\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\EnzoF\\OneDrive\\Documentos\\Documento-Pessoal\\C#\\Projetos\\TrilhaBackEndJR-JUN15\\TaskWebMvc\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-05T20:54:37.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\EnzoF\\OneDrive\\Documentos\\Documento-Pessoal\\C#\\Projetos\\TrilhaBackEndJR-JUN15\\TaskWebMvc\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\EnzoF\\OneDrive\\Documentos\\Documento-Pessoal\\C#\\Projetos\\TrilhaBackEndJR-JUN15\\TaskWebMvc\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T20:09:51.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\EnzoF\\OneDrive\\Documentos\\Documento-Pessoal\\C#\\Projetos\\TrilhaBackEndJR-JUN15\\TaskWebMvc\\Database\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Database\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\EnzoF\\OneDrive\\Documentos\\Documento-Pessoal\\C#\\Projetos\\TrilhaBackEndJR-JUN15\\TaskWebMvc\\Database\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Database\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAoAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T19:40:14.612Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TaskWebMvc",
+              "DocumentMoniker": "C:\\Users\\EnzoF\\OneDrive\\Documentos\\Documento-Pessoal\\C#\\Projetos\\TrilhaBackEndJR-JUN15\\TaskWebMvc\\TaskWebMvc.csproj",
+              "RelativeDocumentMoniker": "TaskWebMvc.csproj",
+              "ToolTip": "C:\\Users\\EnzoF\\OneDrive\\Documentos\\Documento-Pessoal\\C#\\Projetos\\TrilhaBackEndJR-JUN15\\TaskWebMvc\\TaskWebMvc.csproj",
+              "RelativeToolTip": "TaskWebMvc.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-05T19:39:42.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "TaskUser.cs",
               "DocumentMoniker": "C:\\Users\\EnzoF\\OneDrive\\Documentos\\Documento-Pessoal\\C#\\Projetos\\TrilhaBackEndJR-JUN15\\TaskWebMvc\\Models\\TaskUser.cs",
               "RelativeDocumentMoniker": "Models\\TaskUser.cs",
               "ToolTip": "C:\\Users\\EnzoF\\OneDrive\\Documentos\\Documento-Pessoal\\C#\\Projetos\\TrilhaBackEndJR-JUN15\\TaskWebMvc\\Models\\TaskUser.cs",
               "RelativeToolTip": "Models\\TaskUser.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABIAAAAdAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-04T01:49:52.792Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\EnzoF\\OneDrive\\Documentos\\Documento-Pessoal\\C#\\Projetos\\TrilhaBackEndJR-JUN15\\TaskWebMvc\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
               "ToolTip": "C:\\Users\\EnzoF\\OneDrive\\Documentos\\Documento-Pessoal\\C#\\Projetos\\TrilhaBackEndJR-JUN15\\TaskWebMvc\\Models\\User.cs",
               "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-04T01:30:07.953Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "TaskStatus.cs",
               "DocumentMoniker": "C:\\Users\\EnzoF\\OneDrive\\Documentos\\Documento-Pessoal\\C#\\Projetos\\TrilhaBackEndJR-JUN15\\TaskWebMvc\\Models\\Enums\\TaskStatus.cs",
               "RelativeDocumentMoniker": "Models\\Enums\\TaskStatus.cs",
@@ -73,20 +158,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Task.cs",
-              "DocumentMoniker": "C:\\Users\\EnzoF\\OneDrive\\Documentos\\Documento-Pessoal\\C#\\Projetos\\TrilhaBackEndJR-JUN15\\TaskWebMvc\\Models\\Task.cs",
-              "RelativeDocumentMoniker": "Models\\Task.cs",
-              "ToolTip": "C:\\Users\\EnzoF\\OneDrive\\Documentos\\Documento-Pessoal\\C#\\Projetos\\TrilhaBackEndJR-JUN15\\TaskWebMvc\\Models\\Task.cs",
-              "RelativeToolTip": "Models\\Task.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABUAAAA",
+              "DocumentIndex": 5,
+              "Title": "WorkTask.cs",
+              "DocumentMoniker": "C:\\Users\\EnzoF\\OneDrive\\Documentos\\Documento-Pessoal\\C#\\Projetos\\TrilhaBackEndJR-JUN15\\TaskWebMvc\\Models\\WorkTask.cs",
+              "RelativeDocumentMoniker": "Models\\WorkTask.cs",
+              "ToolTip": "C:\\Users\\EnzoF\\OneDrive\\Documentos\\Documento-Pessoal\\C#\\Projetos\\TrilhaBackEndJR-JUN15\\TaskWebMvc\\Models\\WorkTask.cs",
+              "RelativeToolTip": "Models\\WorkTask.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-04T00:35:47.793Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "WeatherForecastController.cs",
               "DocumentMoniker": "C:\\Users\\EnzoF\\OneDrive\\Documentos\\Documento-Pessoal\\C#\\Projetos\\TrilhaBackEndJR-JUN15\\TaskWebMvc\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "Controllers\\WeatherForecastController.cs",

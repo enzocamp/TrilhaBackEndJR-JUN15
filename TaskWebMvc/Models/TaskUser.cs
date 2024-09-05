@@ -5,7 +5,7 @@ namespace TaskWebMvc.Models
     public class TaskUser
     {
         public int TaskId { get; set; }
-        public Task? Task { get; set; }
+        public WorkTask? Task { get; set; }
 
         public int UserId { get; set; }
         public User? User { get; set; }
@@ -19,7 +19,7 @@ namespace TaskWebMvc.Models
         public TaskUser() { }
 
         // Construtor que inicializa as propriedades de navegação
-        public TaskUser(Task task, User user)
+        public TaskUser(WorkTask task, User user)
         {
             Task = task;
             TaskId = task.Id;

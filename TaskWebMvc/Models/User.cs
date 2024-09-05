@@ -8,5 +8,10 @@
 
         public ICollection<TaskUser> TaskUsers { get; set; } = new List<TaskUser>();
 
+        public User(int id, string userName, string passwordHash)
+        {
+            Id = id;
+            UserName = userName;
+            PasswordHash = passwordHash;        }
     }
 }
