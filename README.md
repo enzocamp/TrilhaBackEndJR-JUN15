@@ -6,10 +6,10 @@ Este projeto tem como objetivo desenvolver uma API RESTful para gerenciamento de
 ## PRÉ REQUISITOS ##
 
 .NET SDK - Necessário fazer a instalação do .NET em seu S.O
-# utilizei e versão 8.0.304
+``Utilizei e versão 8.0.304``
 
 Para configurar e rodar esse projeto deve ser instalado o SQLite em seu S.O.
-# Versão que usei foi a 3.46.1
+``Versão que usei foi a 3.46.1``
 
 ## CONFIGURAÇÕES ##
 
@@ -36,6 +36,12 @@ Como as migrations não estão incluídas no repositório, você precisará ger�
 Esse comando criará as migrations necessárias para gerar as tabelas no banco de dados SQLite.
 
 Após criar as migrations, aplique-as ao banco de dados para gerar as tabelas. Use o seguinte comando: ``dotnet ef database update``
+
+## Instalar a autenticação JWT no projeto
+
+1 - Instalar o pacote: ``Microsoft.AspNetCore.Authentication.JwtBearer``, este pacote adiciona suporte para autenticação JWT no ASP.NET Core.
+
+2 - Instalar os pacotes do ASP.NET Identity: ``Install-Package Microsoft.AspNetCore.Identity.EntityFrameworkCore``
 
 
 ## Objetivos:

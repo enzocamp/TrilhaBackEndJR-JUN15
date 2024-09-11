@@ -126,3 +126,17 @@ C:\Users\EnzoF\OneDrive\Documentos\Documento-Pessoal\C#\Projetos\TrilhaBackEndJR
 C:\Users\EnzoF\OneDrive\Documentos\Documento-Pessoal\C#\Projetos\TrilhaBackEndJR-JUN15\TaskWebMvc\obj\Debug\net8.0\TaskWebMvc.pdb
 C:\Users\EnzoF\OneDrive\Documentos\Documento-Pessoal\C#\Projetos\TrilhaBackEndJR-JUN15\TaskWebMvc\obj\Debug\net8.0\TaskWebMvc.genruntimeconfig.cache
 C:\Users\EnzoF\OneDrive\Documentos\Documento-Pessoal\C#\Projetos\TrilhaBackEndJR-JUN15\TaskWebMvc\obj\Debug\net8.0\ref\TaskWebMvc.dll
+C:\Users\EnzoF\OneDrive\Documentos\Documento-Pessoal\C#\Projetos\TrilhaBackEndJR-JUN15\TaskWebMvc\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\EnzoF\OneDrive\Documentos\Documento-Pessoal\C#\Projetos\TrilhaBackEndJR-JUN15\TaskWebMvc\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\EnzoF\OneDrive\Documentos\Documento-Pessoal\C#\Projetos\TrilhaBackEndJR-JUN15\TaskWebMvc\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\EnzoF\OneDrive\Documentos\Documento-Pessoal\C#\Projetos\TrilhaBackEndJR-JUN15\TaskWebMvc\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\EnzoF\OneDrive\Documentos\Documento-Pessoal\C#\Projetos\TrilhaBackEndJR-JUN15\TaskWebMvc\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\EnzoF\OneDrive\Documentos\Documento-Pessoal\C#\Projetos\TrilhaBackEndJR-JUN15\TaskWebMvc\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\EnzoF\OneDrive\Documentos\Documento-Pessoal\C#\Projetos\TrilhaBackEndJR-JUN15\TaskWebMvc\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\EnzoF\OneDrive\Documentos\Documento-Pessoal\C#\Projetos\TrilhaBackEndJR-JUN15\TaskWebMvc\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\EnzoF\OneDrive\Documentos\Documento-Pessoal\C#\Projetos\TrilhaBackEndJR-JUN15\TaskWebMvc\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\EnzoF\OneDrive\Documentos\Documento-Pessoal\C#\Projetos\TrilhaBackEndJR-JUN15\TaskWebMvc\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\EnzoF\OneDrive\Documentos\Documento-Pessoal\C#\Projetos\TrilhaBackEndJR-JUN15\TaskWebMvc\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\EnzoF\OneDrive\Documentos\Documento-Pessoal\C#\Projetos\TrilhaBackEndJR-JUN15\TaskWebMvc\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\EnzoF\OneDrive\Documentos\Documento-Pessoal\C#\Projetos\TrilhaBackEndJR-JUN15\TaskWebMvc\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\EnzoF\OneDrive\Documentos\Documento-Pessoal\C#\Projetos\TrilhaBackEndJR-JUN15\TaskWebMvc\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

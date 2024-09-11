@@ -7,10 +7,10 @@ namespace TaskWebMvc.Models
         public int TaskId { get; set; }
         public WorkTask? Task { get; set; }
 
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public User? User { get; set; }
 
-        public TaskUser(int taskId, int userId)
+        public TaskUser(int taskId, string userId)
         {
             TaskId = taskId;
             UserId = userId;
