@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TaskWebMvc")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+452b5b8abfc942ccce3135a05ba0d00f58d6447c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b4cc42454d7ae054b54369fcc38f9c74c1ef2a94")]
 [assembly: System.Reflection.AssemblyProductAttribute("TaskWebMvc")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TaskWebMvc")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

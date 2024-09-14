@@ -43,6 +43,32 @@ Após criar as migrations, aplique-as ao banco de dados para gerar as tabelas. U
 
 2 - Instalar os pacotes do ASP.NET Identity: ``Install-Package Microsoft.AspNetCore.Identity.EntityFrameworkCore``
 
+## Configuração da Autenticação JWT
+
+Este projeto utiliza ``JWT (JSON Web Token)`` para autenticação.
+
+### Geração da Chave Secreta JWT
+
+1. Gere uma chave secreta segura. Aqui estão alguns métodos sugeridos:
+   - Usando OpenSSL:
+     ```bash
+     openssl rand -base64 32
+     ```
+   - Usando PowerShell (Windows):
+     ```powershell
+     [Convert]::ToBase64String((1..32 | ForEach-Object {Get-Random -Maximum 256}))
+     ```
+
+2. Adicione a chave gerada ao arquivo **appsettings.json** na seção **Jwt**:
+   {
+     "Jwt": {
+       "Key": "SUA_CHAVE_SECRETA_AQUI",
+       "Issuer": "https://localhost:5001",
+       "Audience": "https://localhost:5001",
+       "ExpireMinutes": 60
+     }
+   }
+
 
 ## Objetivos:
 - Criar uma API que permita CRUD (Create, Read, Update, Delete) de tarefas.
