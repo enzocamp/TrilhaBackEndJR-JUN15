@@ -1,5 +1,7 @@
-﻿using TaskWebMvc.Database;
+﻿using Microsoft.EntityFrameworkCore;
+using TaskWebMvc.Database;
 using TaskWebMvc.Models;
+using TaskWebMvc.Models.DTOs;
 
 namespace TaskWebMvc.Services
 {
@@ -26,5 +28,29 @@ namespace TaskWebMvc.Services
             return task;
         }
 
+        public async Task<WorkTask> UpdateAsync(WorkTaskDto workTaskDto, string id)
+        {
+            var task = await FindByIdAsync(id);
+
+            if (task == null)
+            {
+                throw new KeyNotFoundException($"Tarefa com ID {id} não foi encontrada");
+            }
+
+            task.Title = workTaskDto.Title;
+            task.Description = workTaskDto.Description;
+            task.Status = workTaskDto.Status;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException ex)
+            {
+                throw new Exception($"Error in updating task, {ex.Message}");
+            }
+
+            return task;
+        }
     }
 }
