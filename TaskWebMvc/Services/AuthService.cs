@@ -54,8 +54,20 @@ namespace TaskWebMvc.Services
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        public async Task<IdentityResult> RegisterUserAsync(RegisterUserModel model)
+        public async Task<string> RegisterUserAsync(RegisterUserModel model)
         {
+            var existingUser = await _userManager.FindByEmailAsync(model.Email);
+            if (existingUser != null)
+            {
+                throw new InvalidOperationException("Email already in use.");
+            }
+
+            var existingUserName = await _userManager.FindByNameAsync(model.UserName);
+            if (existingUserName != null)
+            {
+                throw new InvalidOperationException("UserName already in use.");
+            }
+
             IdentityUser newUser = new IdentityUser()
             {
                 Email = model.Email,
@@ -64,11 +76,14 @@ namespace TaskWebMvc.Services
 
             IdentityResult created = await _userManager.CreateAsync(newUser, model.Password);
 
-            if (created.Succeeded)
+            if (!created.Succeeded)
+            {
+                throw new Exception("User creation failed.");
+            }
 
-                GenerateJwtToken(newUser);
-
-            return created;
+            var token = GenerateJwtToken(newUser);
+ 
+            return token;
         }
     }
 }

@@ -101,5 +101,50 @@ namespace TaskWebMvc.Controllers
             }
             return BadRequest(ModelState);
         }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteTask(string id)
+        {
+            try
+            {
+                var result = await _taskService.DeleteAsync(id);
+
+                if (!result)
+                {
+                    return NotFound($"Task id:{id} not found");
+                }
+
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Server error:{ex.Message}");
+            }
+        }
+
+        [HttpPost("assign-users")]
+        public async Task<IActionResult> AssignUsersToTask([FromBody] TaskUserDto taskUserDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            try
+            {
+                await _taskService.AddUsersToTaskAsync(taskUserDto.TaskId, taskUserDto.UserIds);
+                return Ok("Users assigned to task successfully");
+            }
+            catch (KeyNotFoundException ex)
+            {
+                // Exceção específica para quando a tarefa ou usuários não são encontrados
+                return NotFound($"Resource not found: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+
+        }
+
     }
 }

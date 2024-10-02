@@ -69,6 +69,27 @@ Este projeto utiliza ``JWT (JSON Web Token)`` para autenticação.
      }
    }
 
+## API Documentation
+``Authentication Endpoints``
+
+1. Register a new user
+
+URL: POST /api/auth/register
+Description: Registra um novo usuário no sistema.
+
+Headers:
+Content-Type: application/json
+
+Request Body:
+{
+  "userName": "testuser",
+  "email": "testuser@example.com",
+  "password": "YourStrongPassword123!"
+}
+
+Response:
+201 Created: Se tudo ocorrer bem, retornara 201.
+400 Bad Request: Se tiver erro na validação, como por exemplo ('User already registered').
 
 ## Objetivos:
 - Criar uma API que permita CRUD (Create, Read, Update, Delete) de tarefas.

@@ -24,37 +24,28 @@ namespace TaskWebMvc.Controllers
         {
             if (ModelState.IsValid)
             {
-
-                if (string.IsNullOrEmpty(model.Email))
-                {
-                    return BadRequest("Email is necessary");
-                }
-
-                IdentityUser existingUser = await _userManager.FindByEmailAsync(model.Email);
-
-                if (existingUser != null)
-                {
-                    return BadRequest("User already registered");
-                }
-
                 try
                 {
-                    var result = await _authService.RegisterUserAsync(model);
+                    var token = await _authService.RegisterUserAsync(model);
 
-                    if (result.Succeeded)
+                    if (token != null)
                     {
-                        return Ok("User created successfully");
+                        return Ok(new { message = "User created successfully", token });
                     }
                     else
                     {
                         return BadRequest("User creation failed");
                     }
                 }
-                catch (Exception ex)
+                catch (InvalidOperationException ex)
                 {
+                    // Captura exceções de operações inválidas como usuário ou email já registrado.
                     return BadRequest(ex.Message);
                 }
-
+                catch (Exception ex)
+                {
+                    return StatusCode(500, $"Internal server error: {ex.Message}");
+                }
 
             }
             return BadRequest("Invalid model state");
