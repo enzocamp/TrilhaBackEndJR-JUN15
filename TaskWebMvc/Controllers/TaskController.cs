@@ -21,7 +21,7 @@ namespace TaskWebMvc.Controllers
             _taskService = taskService;
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public async Task<ActionResult> GetTask(string id)
         {
             if (ModelState.IsValid)
@@ -102,7 +102,7 @@ namespace TaskWebMvc.Controllers
             return BadRequest(ModelState);
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTask(string id)
         {
             try

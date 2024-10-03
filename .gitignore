@@ -1,3 +1,45 @@
 /.vs/
 /slnx.sqlite
 /VSWorkspaceState.json
+
+# Dependências
+**/bin
+**/obj
+**/packages
+**/.vscode
+
+# Arquivos de log
+*.log
+Logs/
+
+# Sistema operacional
+# Windows
+*.pdb
+*.pid
+*.suo
+*.user
+*.cache
+*.csproj.user
+*.rsuser
+*.vspscc
+Thumbs.db
+*.class
+desktop.ini
+$RECYCLE.BIN/
+
+# Banco de dados local
+*.db
+*.sqlite
+*.sqlite3
+
+# Configuração de ambientes e publicações
+.env
+*.local.settings.json
+appsettings*.json
+
+# Certificados de HTTPS
+*.pfx
+*.p12
+
+# Diretório de publicação
+publish/

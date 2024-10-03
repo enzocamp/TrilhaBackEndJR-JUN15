@@ -10,7 +10,7 @@ namespace TaskWebMvc.Models.DTOs
         [Required(ErrorMessage = "The Description is required.")]
         public string Description { get; set; }
 
-        [Range(1,4, ErrorMessage = "Invalid Status value it must be bbetween 1 and 4")]
+        [Range(0,7, ErrorMessage = "Invalid Status value it must be bbetween 0 and 7")]
         public TaskStatus Status { get; set; }
     }
 }

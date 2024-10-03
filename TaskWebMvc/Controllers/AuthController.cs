@@ -59,11 +59,6 @@ namespace TaskWebMvc.Controllers
 
             if (ModelState.IsValid)
             {
-                if (string.IsNullOrEmpty(model.Email))
-                {
-                    return BadRequest("User email is required.");
-                }
-
                 IdentityUser existingUser = await _userManager.FindByEmailAsync(model.Email);
 
                 if (existingUser == null)

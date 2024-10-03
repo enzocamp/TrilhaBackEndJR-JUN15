@@ -16,9 +16,7 @@ Para configurar e rodar esse projeto deve ser instalado o SQLite em seu S.O.
 ``Configurar o SQLite``
 
 1 - Faça o  donwload em: https://www.sqlite.org/ para sua versão de bits do S.O.
-
 2 - Instale em seus disco local C:
-
 3- Configure nas variáveis de ambiente, a variável PATH adicionando uma nova variável com o caminho do executável do sqlite que foi salvo no C:
 
 # String de conexão no appsettings.json
@@ -72,7 +70,7 @@ Este projeto utiliza ``JWT (JSON Web Token)`` para autenticação.
 ## API Documentation
 ``Authentication Endpoints``
 
-1. Register a new user
+1. ``Register a new user``
 
 URL: POST /api/auth/register
 Description: Registra um novo usuário no sistema.
@@ -90,6 +88,107 @@ Request Body:
 Response:
 201 Created: Se tudo ocorrer bem, retornara 201.
 400 Bad Request: Se tiver erro na validação, como por exemplo ('User already registered').
+
+2. ``Login de usuário``, para se logar no sistema e acessar os outros end-points é preciso fazer o login para receber o token de acesso
+
+URL: POST api/auth/login
+
+Headers:
+Content-Type: application/json
+
+Request-Body:
+{
+   "email": "testuser",
+   "password":"YourStrongPassword123!"
+}
+
+Response:
+200 OK: Se tudo ocorrer bem, retornará 200.
+Token: o token será retornado para posterior usar na api de tarefas
+400 Bad Request: Se tiver erro na validação, como ('Invalid Password').
+
+3. ``Criação de Tarefas``, aqui é necessário estar logado para usar o token
+
+URL: POST api/task
+
+Headers:
+Content-Type: application/json
+Authorization: Bearer SeuTokenAqui
+
+POST: Request-Body:
+{
+   "title": "Titulo da tarefa",
+   "description": "descrição",
+   "status: aqui pode preencher de 0 a 7
+}
+
+Response:
+201 Created: Se ocorrer bem, retornará 201.
+500 Internal Error: Se ocorrer algum erro em salvar a tarefa, retornará 500 com a mensagem do erro
+
+4. ``Consulta na tarefa``
+
+URL: GET api/task/iddatarefa
+
+Headers:
+Content-Type: application/json
+Authorization: Bearer SeuTokenAqui
+
+Response:
+200 OK: Se ocorrer bem, retornará 200 com a tarefa no JSON.
+500 Internal Error: Se ocorrer algum erro em salvar a tarefa, retornará 500 com a mensagem do erro
+
+5. ``Editando Tarefa``
+
+URL: POST api/task/iddatarefa
+
+Headers:
+Content-Type: application/json
+Authorization: Bearer SeuTokenAqui
+
+Request-body:
+{
+    "title": "alterando tarefa",
+    "description": "outra tarefa",
+    "status": 3
+}
+
+Response:
+200 OK: Se ocorrer bem, retornará 200 com a tarefa no JSON.
+500 Internal Error: Se ocorrer algum erro em salvar a tarefa, retornará 500 com a mensagem do erro
+
+6. ``Excluindo Tarefa``
+
+URL: DELETE api/task/iddatarefa
+
+Headers:
+Content-Type: application/json
+Authorization: Bearer SeuTokenAqui
+
+Response:
+204 No Content: Se ocorrer bem, retornará 204.
+500 Internal Error: Se ocorrer algum erro em salvar a tarefa, retornará 500 com a mensagem do erro
+
+7. ``Associando vários usuários a 1 tarefa``
+
+URL: POST api/task/assign-users
+
+Headers:
+Content-Type: application/json
+Authorization: Bearer SeuTokenAqui
+
+Request-body:
+{
+    "taskId": "id da tarefa",
+    "userIds": [
+        "3db9f788-841c-46e8-bdb8-d2c58280a33a",
+        "79d2fb38-2db4-460d-8024-a875ab122232"
+    ]
+}
+
+Response:
+200 OK: Se ocorrer bem, retornará 200 com a tarefa no JSON.
+500 Internal Error: Se ocorrer algum erro em salvar a tarefa, retornará 500 com a mensagem do erro
 
 ## Objetivos:
 - Criar uma API que permita CRUD (Create, Read, Update, Delete) de tarefas.
