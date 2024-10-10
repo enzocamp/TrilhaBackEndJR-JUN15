@@ -14,12 +14,13 @@ RUN dotnet restore
 COPY . ./aspnetapp/
 RUN dotnet publish -c release -o /app --no-restore
 
-# Copia o arquivo do banco de dados SQLite local para o container
-COPY ./mydatabase.db /app/db/mydatabase.db
-
 # final stage/image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
+
+# Criando o diretório onde o banco de dados será criado
+RUN mkdir -p /app/db
+
 COPY --from=build /app ./
 
 EXPOSE 8080
