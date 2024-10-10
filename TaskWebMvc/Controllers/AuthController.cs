@@ -26,16 +26,10 @@ namespace TaskWebMvc.Controllers
             {
                 try
                 {
-                    var token = await _authService.RegisterUserAsync(model);
+                    await _authService.RegisterUserAsync(model);
 
-                    if (token != null)
-                    {
-                        return Ok(new { message = "User created successfully", token });
-                    }
-                    else
-                    {
-                        return BadRequest("User creation failed");
-                    }
+                    return Ok(new { message = "User created successfully"});
+                    
                 }
                 catch (InvalidOperationException ex)
                 {
@@ -44,12 +38,13 @@ namespace TaskWebMvc.Controllers
                 }
                 catch (Exception ex)
                 {
+                    System.Diagnostics.Debug.WriteLine(ex);
                     return StatusCode(500, $"Internal server error: {ex.Message}");
+                    
                 }
 
             }
             return BadRequest("Invalid model state");
-
         }
 
         [HttpPost("login")]

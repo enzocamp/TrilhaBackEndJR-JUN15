@@ -54,7 +54,7 @@ namespace TaskWebMvc.Services
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        public async Task<string> RegisterUserAsync(RegisterUserModel model)
+        public async Task RegisterUserAsync(RegisterUserModel model)
         {
             var existingUser = await _userManager.FindByEmailAsync(model.Email);
             if (existingUser != null)
@@ -78,12 +78,8 @@ namespace TaskWebMvc.Services
 
             if (!created.Succeeded)
             {
-                throw new Exception("User creation failed.");
+                throw new Exception("User creation failed. " + created.Errors.ElementAt(0).Description);
             }
-
-            var token = GenerateJwtToken(newUser);
- 
-            return token;
         }
     }
 }

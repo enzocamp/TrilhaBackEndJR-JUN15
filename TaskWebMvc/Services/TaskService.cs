@@ -16,6 +16,10 @@ namespace TaskWebMvc.Services
             _context = context;
         }
 
+        public async Task<List<WorkTask>> FindAllAsync()
+        {
+            return await _context.WorkTasks.ToListAsync();
+        }
 
         public async Task<WorkTask?> FindByIdAsync(string id)
         {
@@ -24,10 +28,23 @@ namespace TaskWebMvc.Services
 
         public async Task<WorkTask> InsertAsync(WorkTask task)
         {
-            _context.Add(task);
-            await _context.SaveChangesAsync();
+            try
+            {
+                _context.Add(task);
+                await _context.SaveChangesAsync();
 
-            return task;
+                return task;
+            }
+            catch (DbUpdateException dbEx)
+            {
+                // Captura erros relacionados ao banco de dados, como conflitos de chave ou falhas de conexão
+                throw new Exception("Error saving task to the database.", dbEx);
+            }
+            catch (Exception ex)
+            {
+                // Captura qualquer outro tipo de erro
+                throw new Exception("An error occurred while saving the task.", ex);
+            }
         }
 
         public async Task<WorkTask> UpdateAsync(WorkTaskDto workTaskDto, string id)

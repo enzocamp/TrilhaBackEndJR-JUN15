@@ -21,6 +21,22 @@ namespace TaskWebMvc.Controllers
             _taskService = taskService;
         }
 
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllTasks()
+        {
+            try
+            {
+                var tasks = await _taskService.FindAllAsync();
+
+                return Ok(tasks);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
         [HttpGet("{id}")]
         public async Task<ActionResult> GetTask(string id)
         {
