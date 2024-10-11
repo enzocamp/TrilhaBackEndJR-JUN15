@@ -18,8 +18,7 @@ RUN dotnet publish -c release -o /app --no-restore
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 
-# Criando o diretório onde o banco de dados será criado
-RUN mkdir -p /app/db
+RUN mkdir -p /app/db && chmod -R 777 /app/db
 
 COPY --from=build /app ./
 
