@@ -14,6 +14,13 @@ RUN dotnet restore
 COPY . ./aspnetapp/
 RUN dotnet publish -c release -o /app --no-restore
 
+ENV ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
+ENV Jwt__Audience=${Jwt__Audience}
+ENV Jwt__Issuer=${Jwt__Issuer}
+ENV Jwt__Key=${Jwt__Key}
+
+RUN apt-get update && apt-get install -y sqlite3 libsqlite3-dev
+
 # final stage/image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
@@ -24,4 +31,3 @@ COPY --from=build /app ./
 
 EXPOSE 8080
 ENTRYPOINT ["dotnet", "TaskWebMvc.dll"]
-
