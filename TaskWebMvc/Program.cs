@@ -9,6 +9,21 @@ using TaskWebMvc.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Configura a leitura dos arquivos appsettings com base no ambiente
+builder.Configuration
+    .SetBasePath(builder.Environment.ContentRootPath)
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
+    .AddEnvironmentVariables();
+
+builder.Logging.AddConsole(); // Adiciona o console como um provedor de log (opcional)
+builder.Logging.AddDebug();   // Adiciona saída de log para o debug (opcional)
+var environment = builder.Environment.EnvironmentName;
+builder.Logging.ClearProviders(); // Limpa outros providers, caso tenha algum
+builder.Logging.AddConsole().AddDebug();
+Console.WriteLine($"O ambiente atual é: {environment}");
+
+
 // Add services to the container.
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -51,25 +66,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
 var app = builder.Build();
-
-using (var scope = app.Services.CreateScope())
-{
-    var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-    db.Database.EnsureCreated();
-    db.Database.Migrate();  // Aplica as migrations e cria o banco de dados, se necessário
-}
-
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseHttpsRedirection();
 }
-
-app.UseHttpsRedirection();
 
 app.UseAuthentication();
 

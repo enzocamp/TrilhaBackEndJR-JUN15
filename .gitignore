@@ -28,9 +28,9 @@ desktop.ini
 $RECYCLE.BIN/
 
 # Banco de dados local
-*.db
 *.sqlite
 *.sqlite3
+*.db
 
 # Configuração de ambientes e publicações
 .env

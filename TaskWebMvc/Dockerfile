@@ -11,21 +11,28 @@ COPY *.sln .
 COPY *.csproj .
 RUN dotnet restore
 
-COPY . ./aspnetapp/
+COPY . ./app/
+
+COPY ./Database/mydatabase.db /app/Database/mydatabase.db
+COPY ./appsettings.json /app
+COPY ./appsettings.Production.json /app
+
 RUN dotnet publish -c release -o /app --no-restore
 
+RUN apt-get update && apt-get install -y sqlite3 libsqlite3-dev
+
 ENV ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
+ENV Jwt__Key=${Jwt__Key}
 ENV Jwt__Audience=${Jwt__Audience}
 ENV Jwt__Issuer=${Jwt__Issuer}
-ENV Jwt__Key=${Jwt__Key}
 
 # final stage/image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 
-RUN mkdir -p /app/db && chmod -R 777 /app/db
+COPY --from=build /app .
 
-COPY --from=build /app ./
+RUN chmod -R 777 Database
 
 EXPOSE 8080
 ENTRYPOINT ["dotnet", "TaskWebMvc.dll"]
