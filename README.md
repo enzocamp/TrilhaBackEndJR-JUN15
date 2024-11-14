@@ -16,6 +16,7 @@ URL Base: ``https://api-task-mvc.onrender.com``
 ## Endpoints Principais ##
 
 ## Registro/Login ##
+
 ``Autenticação``
 Esses endpoints são usados para registrar um novo usuário e fazer login.
 
@@ -36,7 +37,7 @@ Endpoint: POST url base + /api/auth/register
   "message": "User registered successfully"
 }
 
-``Login de Usuário``
+## Login de Usuário## 
 Endpoint: POST url base + /api/auth/login
 
 ``Descrição:`` Faz login na conta do usuário e retorna um token JWT para autenticação.
@@ -55,7 +56,7 @@ Endpoint: POST url base + /api/auth/login
 ## Gerenciamento de Tarefas ##
 Esses endpoints permitem a criação, atualização, listagem e exclusão de tarefas. Todos os endpoints de tarefas exigem um token JWT no cabeçalho de autorização.
 
-``Criar uma Tarefa``
+## Criar uma Tarefa ## 
 Endpoint: POST url base + /api/task
 
 ``Descrição:`` Cria uma nova tarefa.
@@ -81,7 +82,7 @@ Status esperado: Created = 0,WaitingForActivation = 1,WaitingToRun = 2,Running =
     "taskUsers": []
 }
 
-``Listar Tarefas``
+## Listar Tarefas ## 
 Endpoint: GET url base + /api/task
 
 ``Descrição:`` Retorna uma lista de todas as tarefas do usuário.
@@ -99,7 +100,7 @@ Authorization: Bearer jwt_token_here
     },
     
 
-``Atualizar uma Tarefa``
+## Atualizar uma Tarefa ## 
 Endpoint: PUT url base + /api/task/{id}
 
 ``Descrição:`` Atualiza os detalhes de uma tarefa existente.
@@ -124,7 +125,7 @@ Authorization: Bearer jwt_token_here
     "taskUsers": []
 }
 
-``Deletar uma Tarefa``
+## Deletar uma Tarefa ## 
 Endpoint: DELETE url base + /api/task/{id}
 
 ``Descrição:`` Exclui uma tarefa específica.
@@ -137,7 +138,7 @@ Authorization: Bearer jwt_token_here
   "message": "Task deleted successfully"
 }
 
-``Assign Users to Task``
+## Assign Users to Task ## 
 Endpoint: POST url base + /api/task/{taskId}/assign-users
 
 Descrição: Associar usuários a uma tarefa
@@ -161,7 +162,7 @@ Envie uma lista de IDs de usuários que você deseja associar à tarefa.
   "message": "Users assigned to task successfully"
 }
 
-``Get Tasks with Assigned Users``
+## Get Tasks with Assigned Users ## 
 Descrição: Esse endpoint permite visualizar as tarefas com os usuários que foram atribuídos a elas.
 
 Endpoint: POST url base + /api/task/tasks-with-users
