@@ -19,19 +19,19 @@ URL Base: ``https://api-task-mvc.onrender.com``
 ``Autenticação``
 Esses endpoints são usados para registrar um novo usuário e fazer login.
 
-Registrar um novo usuário
+``Registrar um novo usuário``
 Endpoint: POST url base + /api/auth/register
 
-Descrição: Cria uma nova conta de usuário.
+``Descrição:`` Cria uma nova conta de usuário.
 
-Exemplo de Corpo da Requisição (JSON):
+``Exemplo de Corpo da Requisição (JSON):``
 {
   "email": "example@example.com",
   "password": "YourPassword123",
   "confirmPassword": "YourPassword123"
 }
 
-Resposta de Sucesso (201 Created):
+``Resposta de Sucesso (201 Created):``
 {
   "message": "User registered successfully"
 }
@@ -39,15 +39,15 @@ Resposta de Sucesso (201 Created):
 ``Login de Usuário``
 Endpoint: POST url base + /api/auth/login
 
-Descrição: Faz login na conta do usuário e retorna um token JWT para autenticação.
+``Descrição:`` Faz login na conta do usuário e retorna um token JWT para autenticação.
 
-Exemplo de Corpo da Requisição (JSON):
+``Exemplo de Corpo da Requisição (JSON):``
 {
   "email": "example@example.com",
   "password": "YourPassword123"
 }
 
-Resposta de Sucesso (200 OK):
+``Resposta de Sucesso (200 OK):``
 {
   "token": "jwt_token_here"
 }
@@ -58,21 +58,21 @@ Esses endpoints permitem a criação, atualização, listagem e exclusão de tar
 ``Criar uma Tarefa``
 Endpoint: POST url base + /api/task
 
-Descrição: Cria uma nova tarefa.
+``Descrição:`` Cria uma nova tarefa.
 
-Cabeçalho de Autorização:
-Authorization: Bearer jwt_token_here
+``Cabeçalho de Autorização:``
+``Authorization:`` Bearer jwt_token_here
 
 Status esperado: Created = 0,WaitingForActivation = 1,WaitingToRun = 2,Running = 3,aitingForChildrenToComplete = 4,RanToCompletion = 5,Canceled = 6,Faulted = 7
 
-Exemplo de Corpo da Requisição (JSON):
+``Exemplo de Corpo da Requisição (JSON):``
 {
   "title": "Estudar .NET",
   "description": "Estudar para a certificação .NET",
   "status": "0"
 }
 
-Resposta de Sucesso (201 Created):
+``Resposta de Sucesso (201 Created):``
 {
     "id": "1e655a13-b780-4a62-9e6f-f246fee188e6",
     "title": "Estudar .NET",
@@ -84,12 +84,12 @@ Resposta de Sucesso (201 Created):
 ``Listar Tarefas``
 Endpoint: GET url base + /api/task
 
-Descrição: Retorna uma lista de todas as tarefas do usuário.
+``Descrição:`` Retorna uma lista de todas as tarefas do usuário.
 
-Cabeçalho de Autorização:
+``Cabeçalho de Autorização:``
 Authorization: Bearer jwt_token_here
 
-Resposta de Sucesso (200 OK):
+``Resposta de Sucesso (200 OK):``
     {
         "id": "1e655a13-b780-4a62-9e6f-f246fee188e6",
         "title": "Estudar .NET",
@@ -102,12 +102,12 @@ Resposta de Sucesso (200 OK):
 ``Atualizar uma Tarefa``
 Endpoint: PUT url base + /api/task/{id}
 
-Descrição: Atualiza os detalhes de uma tarefa existente.
+``Descrição:`` Atualiza os detalhes de uma tarefa existente.
 
-Cabeçalho de Autorização:
+``Cabeçalho de Autorização:``
 Authorization: Bearer jwt_token_here
 
-Exemplo de Corpo da Requisição (JSON):
+``Exemplo de Corpo da Requisição (JSON):``
 {
   "title": "Estudar ASP.NET Core",
   "description": "Estudar o framework ASP.NET Core para aprimorar conhecimentos",
@@ -115,7 +115,7 @@ Exemplo de Corpo da Requisição (JSON):
   "isCompleted": true
 }
 
-Resposta de Sucesso (200 OK):
+``Resposta de Sucesso (200 OK):``
 {
     "id": "1e655a13-b780-4a62-9e6f-f246fee188e6",
     "title": "Estudar ASP.NET Core",
@@ -127,12 +127,12 @@ Resposta de Sucesso (200 OK):
 ``Deletar uma Tarefa``
 Endpoint: DELETE url base + /api/task/{id}
 
-Descrição: Exclui uma tarefa específica.
+``Descrição:`` Exclui uma tarefa específica.
 
-Cabeçalho de Autorização:
+``Cabeçalho de Autorização:``
 Authorization: Bearer jwt_token_here
 
-Resposta de Sucesso (204 No Content):
+``Resposta de Sucesso (204 No Content):``
 {
   "message": "Task deleted successfully"
 }
@@ -142,20 +142,20 @@ Endpoint: POST url base + /api/task/{taskId}/assign-users
 
 Descrição: Associar usuários a uma tarefa
 
-Cabeçalho de Autorização:
-Authorization: Bearer jwt_token_here
+``Cabeçalho de Autorização:``
+``Authorization:`` Bearer jwt_token_here
 Content-Type: application/json
 
 Parâmetros da URL
 taskId: O ID da tarefa à qual você deseja associar os usuários.
 
-Corpo da Requisição (JSON)
+``Corpo da Requisição (JSON)``
 Envie uma lista de IDs de usuários que você deseja associar à tarefa.
 {
   "userIds": ["userId1", "userId2", "userId3"]
 }
 
-Respostas
+``Respostas``
 200 OK: Usuários associados com sucesso.
 {
   "message": "Users assigned to task successfully"
@@ -166,9 +166,9 @@ Descrição: Esse endpoint permite visualizar as tarefas com os usuários que fo
 
 Endpoint: POST url base + /api/task/tasks-with-users
 Método: GET
-Autenticação: Bearer jwt_token_here
+``Autenticação:`` Bearer jwt_token_here
 
-Exemplo de Resposta (200 OK)
+``Exemplo de Resposta (200 OK)``
 [
   {
     "taskId": "a12345",
