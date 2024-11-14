@@ -30,6 +30,8 @@ ENV Jwt__Issuer=${Jwt__Issuer}
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 
+RUN apt-get update && apt-get install -y sqlite3 libsqlite3-dev
+
 COPY --from=build /app .
 
 RUN chmod -R 777 Database

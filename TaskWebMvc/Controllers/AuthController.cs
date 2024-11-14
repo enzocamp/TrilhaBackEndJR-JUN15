@@ -10,10 +10,10 @@ namespace TaskWebMvc.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<User> _userManager;
         private readonly IAuthService _authService;
 
-        public AuthController(UserManager<IdentityUser> userManager, IAuthService authService)
+        public AuthController(UserManager<User> userManager, IAuthService authService)
         {
             _userManager = userManager;
             _authService = authService;
@@ -54,7 +54,7 @@ namespace TaskWebMvc.Controllers
 
             if (ModelState.IsValid)
             {
-                IdentityUser existingUser = await _userManager.FindByEmailAsync(model.Email);
+                User existingUser = await _userManager.FindByEmailAsync(model.Email);
 
                 if (existingUser == null)
                 {

@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using TaskWebMvc.Database;
 using TaskWebMvc.Interfaces;
+using TaskWebMvc.Models;
 using TaskWebMvc.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,7 +30,7 @@ Console.WriteLine($"O ambiente atual é: {environment}");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
 

@@ -1,5 +1,3 @@
-![Código Certo Coders](https://utfs.io/f/3b2340e8-5523-4aca-a549-0688fd07450e-j4edu.jfif)
-
 # 📚 Trilha Inicial BackEnd Jr
 Este projeto tem como objetivo desenvolver uma API RESTful para gerenciamento de tarefas, proporcionando funcionalidades de CRUD (Create, Read, Update, Delete) de tarefas, autenticação de usuários e armazenamento dos dados em um banco de dados, utilizando o Frameworok .NET e ASP.NET Core juntamente com a linguagem C#, EntityFramework, SQLite para o banco de dados.
 
@@ -11,7 +9,184 @@ Este projeto tem como objetivo desenvolver uma API RESTful para gerenciamento de
 Para configurar e rodar esse projeto deve ser instalado o SQLite em seu S.O.
 ``Versão que usei foi a 3.46.1``
 
-## CONFIGURAÇÕES ##
+## CONFIGURAÇÕES PARA TESTAR A API ##
+
+URL Base: ``https://api-task-mvc.onrender.com``
+
+## Endpoints Principais ##
+
+## Registro/Login ##
+``Autenticação``
+Esses endpoints são usados para registrar um novo usuário e fazer login.
+
+Registrar um novo usuário
+Endpoint: POST url base + /api/auth/register
+
+Descrição: Cria uma nova conta de usuário.
+
+Exemplo de Corpo da Requisição (JSON):
+{
+  "email": "example@example.com",
+  "password": "YourPassword123",
+  "confirmPassword": "YourPassword123"
+}
+
+Resposta de Sucesso (201 Created):
+{
+  "message": "User registered successfully"
+}
+
+``Login de Usuário``
+Endpoint: POST url base + /api/auth/login
+
+Descrição: Faz login na conta do usuário e retorna um token JWT para autenticação.
+
+Exemplo de Corpo da Requisição (JSON):
+{
+  "email": "example@example.com",
+  "password": "YourPassword123"
+}
+
+Resposta de Sucesso (200 OK):
+{
+  "token": "jwt_token_here"
+}
+
+## Gerenciamento de Tarefas ##
+Esses endpoints permitem a criação, atualização, listagem e exclusão de tarefas. Todos os endpoints de tarefas exigem um token JWT no cabeçalho de autorização.
+
+``Criar uma Tarefa``
+Endpoint: POST url base + /api/task
+
+Descrição: Cria uma nova tarefa.
+
+Cabeçalho de Autorização:
+Authorization: Bearer jwt_token_here
+
+Status esperado: Created = 0,WaitingForActivation = 1,WaitingToRun = 2,Running = 3,aitingForChildrenToComplete = 4,RanToCompletion = 5,Canceled = 6,Faulted = 7
+
+Exemplo de Corpo da Requisição (JSON):
+{
+  "title": "Estudar .NET",
+  "description": "Estudar para a certificação .NET",
+  "status": "0"
+}
+
+Resposta de Sucesso (201 Created):
+{
+    "id": "1e655a13-b780-4a62-9e6f-f246fee188e6",
+    "title": "Estudar .NET",
+    "description": "Estudar para a certificação .NET",
+    "status": 0,
+    "taskUsers": []
+}
+
+``Listar Tarefas``
+Endpoint: GET url base + /api/task
+
+Descrição: Retorna uma lista de todas as tarefas do usuário.
+
+Cabeçalho de Autorização:
+Authorization: Bearer jwt_token_here
+
+Resposta de Sucesso (200 OK):
+    {
+        "id": "1e655a13-b780-4a62-9e6f-f246fee188e6",
+        "title": "Estudar .NET",
+        "description": "Estudar para a certificação .NET",
+        "status": 0,
+        "taskUsers": []
+    },
+    
+
+``Atualizar uma Tarefa``
+Endpoint: PUT url base + /api/task/{id}
+
+Descrição: Atualiza os detalhes de uma tarefa existente.
+
+Cabeçalho de Autorização:
+Authorization: Bearer jwt_token_here
+
+Exemplo de Corpo da Requisição (JSON):
+{
+  "title": "Estudar ASP.NET Core",
+  "description": "Estudar o framework ASP.NET Core para aprimorar conhecimentos",
+  "dueDate": "2024-11-20T00:00:00",
+  "isCompleted": true
+}
+
+Resposta de Sucesso (200 OK):
+{
+    "id": "1e655a13-b780-4a62-9e6f-f246fee188e6",
+    "title": "Estudar ASP.NET Core",
+    "description": "Estudar o framework ASP.NET Core para aprimorar conhecimentos",
+    "status": 2,
+    "taskUsers": []
+}
+
+``Deletar uma Tarefa``
+Endpoint: DELETE url base + /api/task/{id}
+
+Descrição: Exclui uma tarefa específica.
+
+Cabeçalho de Autorização:
+Authorization: Bearer jwt_token_here
+
+Resposta de Sucesso (204 No Content):
+{
+  "message": "Task deleted successfully"
+}
+
+``Assign Users to Task``
+Endpoint: POST url base + /api/task/{taskId}/assign-users
+
+Descrição: Associar usuários a uma tarefa
+
+Cabeçalho de Autorização:
+Authorization: Bearer jwt_token_here
+Content-Type: application/json
+
+Parâmetros da URL
+taskId: O ID da tarefa à qual você deseja associar os usuários.
+
+Corpo da Requisição (JSON)
+Envie uma lista de IDs de usuários que você deseja associar à tarefa.
+{
+  "userIds": ["userId1", "userId2", "userId3"]
+}
+
+Respostas
+200 OK: Usuários associados com sucesso.
+{
+  "message": "Users assigned to task successfully"
+}
+
+``Get Tasks with Assigned Users``
+Descrição: Esse endpoint permite visualizar as tarefas com os usuários que foram atribuídos a elas.
+
+Endpoint: POST url base + /api/task/tasks-with-users
+Método: GET
+Autenticação: Bearer jwt_token_here
+
+Exemplo de Resposta (200 OK)
+[
+  {
+    "taskId": "a12345",
+    "taskTitle": "Task Example 1",
+    "taskUsers": [
+      {
+        "userId": "b12345",
+        "userName": "User1"
+      },
+      {
+        "userId": "c67890",
+        "userName": "User2"
+      }
+    ]
+  }
+]
+
+## CONFIGURAÇÕES PARA QUEM QUISER BAIXAR O REPOSITÓRIO E TESTAR LOCAL##
 
 ``Configurar o SQLite``
 
@@ -24,22 +199,6 @@ Para configurar e rodar esse projeto deve ser instalado o SQLite em seu S.O.
 "ConnectionStrings": {
   "DefaultConnection": "Data Source=C:\\SQLite\\mydatabase.db"
 }
-
-# Criar as Migrations
-
-Como as migrations não estão incluídas no repositório, você precisará gerá-las manualmente. Execute o seguinte comando para criar a migration inicial:
-
-   bash: ``dotnet ef migrations add InitialCreate``
-
-Esse comando criará as migrations necessárias para gerar as tabelas no banco de dados SQLite.
-
-Após criar as migrations, aplique-as ao banco de dados para gerar as tabelas. Use o seguinte comando: ``dotnet ef database update``
-
-## Instalar a autenticação JWT no projeto
-
-1 - Instalar o pacote: ``Microsoft.AspNetCore.Authentication.JwtBearer``, este pacote adiciona suporte para autenticação JWT no ASP.NET Core.
-
-2 - Instalar os pacotes do ASP.NET Identity: ``Install-Package Microsoft.AspNetCore.Identity.EntityFrameworkCore``
 
 ## Configuração da Autenticação JWT
 

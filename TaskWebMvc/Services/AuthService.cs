@@ -11,16 +11,16 @@ namespace TaskWebMvc.Services
 {
     public class AuthService : IAuthService
     {
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<User> _userManager;
         private readonly IConfiguration _configuration;
 
-        public AuthService(UserManager<IdentityUser> userManager, IConfiguration configuration)
+        public AuthService(UserManager<User> userManager, IConfiguration configuration)
         {
             _userManager = userManager;
             _configuration = configuration;
         }
 
-        public string GenerateJwtToken(IdentityUser user)
+        public string GenerateJwtToken(User user)
         {
             var key = _configuration["Jwt:Key"];
 
@@ -68,7 +68,7 @@ namespace TaskWebMvc.Services
                 throw new InvalidOperationException("UserName already in use.");
             }
 
-            IdentityUser newUser = new IdentityUser()
+            User newUser = new User()
             {
                 Email = model.Email,
                 UserName = model.UserName,

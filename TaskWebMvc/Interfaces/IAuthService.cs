@@ -6,7 +6,7 @@ namespace TaskWebMvc.Interfaces
     public interface IAuthService
     {
         Task RegisterUserAsync(RegisterUserModel model);
-        string GenerateJwtToken(IdentityUser user);
+        string GenerateJwtToken(User user);
 
     }
 }

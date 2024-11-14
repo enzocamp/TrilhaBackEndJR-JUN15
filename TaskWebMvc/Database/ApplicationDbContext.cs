@@ -5,11 +5,10 @@ using Microsoft.AspNetCore.Identity;
 
 namespace TaskWebMvc.Database
 {
-    public class ApplicationDbContext : IdentityDbContext<IdentityUser>
+    public class ApplicationDbContext : IdentityDbContext<User>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
-        public DbSet<User> Users { get; set; }
         public DbSet<WorkTask> WorkTasks { get; set; }
         public DbSet<TaskUser> TaskUsers { get; set; }
 

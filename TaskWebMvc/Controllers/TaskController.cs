@@ -138,17 +138,23 @@ namespace TaskWebMvc.Controllers
             }
         }
 
-        [HttpPost("assign-users")]
-        public async Task<IActionResult> AssignUsersToTask([FromBody] TaskUserDto taskUserDto)
+        [HttpPost("{taskId}/assign-users"),AllowAnonymous]
+        public async Task<IActionResult> AssignUsersToTask(string taskId, [FromBody] TaskUserDto taskUserDto)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+
+            if (taskUserDto.UserIds == null || taskUserDto.UserIds.Count == 0)
+            {
+                return BadRequest("UserIds list cannot be null or empty");
+            }
+
             try
             {
-                await _taskService.AddUsersToTaskAsync(taskUserDto.TaskId, taskUserDto.UserIds);
-                return Ok("Users assigned to task successfully");
+                await _taskService.AddUsersToTaskAsync(taskId, taskUserDto.UserIds);
+                return Ok(new { message = "Users assigned to task successfully" });
             }
             catch (KeyNotFoundException ex)
             {
@@ -162,5 +168,25 @@ namespace TaskWebMvc.Controllers
 
         }
 
+        [HttpGet("tasks-with-users"),AllowAnonymous]
+        public async Task<IActionResult> GetTaskWithUserAddigned()
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                var taskWithUsers = await _taskService.GetTasksWithUsersAsync();
+
+                return Ok(taskWithUsers);
+            }
+
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
     }
 }

@@ -105,14 +105,41 @@ namespace TaskWebMvc.Services
 
             foreach (var userId in usersId)
             {
-                var taskUser = new TaskUser
+                var existingAssociation = await _context.TaskUsers.AnyAsync(tu => tu.TaskId == taskId && tu.UserId == userId);
+
+                if (!existingAssociation)
                 {
-                    TaskId = taskId,
-                    UserId = userId,
-                };
-                _context.TaskUsers.Add(taskUser);
+                    var taskUser = new TaskUser
+                    {
+                        TaskId = taskId,
+                        UserId = userId,
+                    };
+                    _context.TaskUsers.Add(taskUser);
+                    await _context.SaveChangesAsync();
+                }
+                else
+                {
+                    throw  new Exception($"User {userId} is already associated with the task");
+                }
             }
-            await _context.SaveChangesAsync();
+        }
+
+        public async Task<List<TaskWithUsersDto>> GetTasksWithUsersAsync()
+        {
+            var x =  await _context.WorkTasks
+                .Select(task => new TaskWithUsersDto
+                {
+                    TaskId = task.Id,
+                    TaskTitle = task.Title,
+                    TaskUsers = task.TaskUsers.Select(tu => new UserDto
+                    {
+                        UserId = tu.UserId,
+                        UserName = tu.User.UserName
+                    }).ToList()
+                })
+                .ToListAsync();
+
+            return x;
         }
 
     }
