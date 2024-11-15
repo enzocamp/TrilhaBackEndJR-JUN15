@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics.Metrics;
 using System.Reflection.Metadata.Ecma335;
+using TaskWebMvc.Models;
 
 namespace TaskWebMvc.Controllers
 {
@@ -10,9 +11,9 @@ namespace TaskWebMvc.Controllers
     [Route("api/[controller]")]
     public class UsersController : ControllerBase
     {
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<User> _userManager;
 
-        public UsersController(UserManager<IdentityUser> userManager)
+        public UsersController(UserManager<User> userManager)
         {
             _userManager = userManager;
         }
